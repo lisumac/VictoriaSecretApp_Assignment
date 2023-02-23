@@ -1,5 +1,9 @@
 package com.assignment.victoriassecret.data.dataModel
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Product(
     val brand: String,
     val id: String,
@@ -8,4 +12,4 @@ data class Product(
     val price: String,
     val productDesc: String,
     val productUrl: String
-)
+) : Parcelable

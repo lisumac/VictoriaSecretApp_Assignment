@@ -1,17 +1,13 @@
 package com.assignment.victoriassecret.view.fragments
 
 import android.annotation.SuppressLint
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.assignment.victoriassecret.R
-import com.assignment.victoriassecret.databinding.FragmentProductsLayoutBinding
 import com.assignment.victoriassecret.databinding.FragmentUserProfileLayoutBinding
-import com.assignment.victoriassecret.viewModel.ProductListViewModel
 import com.assignment.victoriassecret.viewModel.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

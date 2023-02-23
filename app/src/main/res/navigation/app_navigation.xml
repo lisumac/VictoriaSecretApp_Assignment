@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/app_navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@+id/homeFragment">
 
+
+
+    <fragment
+        android:id="@+id/productList_Fragment"
+        android:name="com.assignment.victoriassecret.view.fragments.ProductListFragment"
+        android:label="ProductList"
+        tools:layout="@layout/product_item_list_layout">
+
+
+        <action
+            android:id="@+id/action_productList_to_detailFragment"
+            app:destination="@+id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popUpTo="@id/app_navigation"
+            app:popUpToInclusive="true"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.assignment.victoriassecret.view.fragments.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_user_profile_layout" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.assignment.victoriassecret.view.fragments.HomeFragment"
+        android:label="Home"
+        app:popUpToInclusive="true"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.assignment.victoriassecret.view.fragments.ProductDetailsFragment"
+        android:label=" ProductDetail"
+        tools:layout="@layout/product_details_fragment_layout">
+
+
+        <action
+            android:id="@+id/action_detailFragment_to_ProductListFragment"
+            app:destination="@id/productList_Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@+id/productList_Fragment"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <argument
+            android:name="product_details"
+            app:argType="com.assignment.victoriassecret.data.dataModel.Product" />
+    </fragment>
 </navigation>

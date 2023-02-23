@@ -5,6 +5,9 @@ import android.widget.FrameLayout
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.assignment.victoriassecret.R
 import com.assignment.victoriassecret.databinding.ActivityDashBoardBinding
@@ -19,12 +22,13 @@ class DashBoardActivity : AppCompatActivity() {
     lateinit var dashboardBinding: ActivityDashBoardBinding
     var tabnames: ArrayList<String> = ArrayList()
     private var indicatorWidth = 0
+    lateinit var navController: NavController
     private val dashBoardViewModel: DashBoardViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initDataBindingAndViewModel()
-        setupViewPager()
-        setupTabLayout()
+       /* setupViewPager()
+        setupTabLayout()*/
 
 
     }
@@ -33,12 +37,13 @@ class DashBoardActivity : AppCompatActivity() {
         dashboardBinding = DataBindingUtil.setContentView(this, R.layout.activity_dash_board)
 
         dashboardBinding.dashboardVm = dashBoardViewModel
-        //dashboardBinding.handlr = this
         dashboardBinding.lifecycleOwner = this;
 
     }
-
-    private fun setupTabLayout() {
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+  /*  private fun setupTabLayout() {
         // tabnames.add(0,"TabName")
         tabnames.add(0, "ProductList")
         tabnames.add(1, "Profile")
@@ -93,5 +98,5 @@ class DashBoardActivity : AppCompatActivity() {
         } else {
             viewPager.currentItem = viewPager.currentItem - 1
         }
-    }
+    }*/
 }
