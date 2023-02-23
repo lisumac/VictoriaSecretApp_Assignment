@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">VictoriaSecretApp</string>
+    <string name="login">Login </string>
+    <string name="forgot_password">Forgot your password </string>
+    <string name="wallet_balance">WalletBalance</string>
+    <string name="wallet_balance_value">1400</string>
+    <string name="points_earned">PointsEarned</string>
+    <string name="points_earned_value">1200</string>
+    <string name="user_name">wjohn</string>
+    <string name="address">Address   </string>
+    <string name="date_of_birth">DateOfBirth</string>
+    <string name="dob_value">10/11/1900</string>
+    <string name="user_first_last_name">UserName</string>
+    <!--fragments-->
+    <string name="first_fragment">ProductsList</string>
+    <string name="second_fragment">Profile</string>
+    <string name="login_">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="descending_order">Descending Order</string>
+    <string name="ascending_order">Ascending Order</string>
+    <string name="rs">\u20B9</string>
+</resources>
